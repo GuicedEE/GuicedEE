@@ -32,3 +32,4 @@ persistence.xml
 
 .idea/
 **.iml
+/GuicedPersistence/.idea/
