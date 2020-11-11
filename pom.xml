@@ -18,6 +18,7 @@
             <id>enable-jsf</id>
             <modules>
                 <module>GuicedJSF</module>
+				<module>GuicedPrimeFaces</module>
             </modules>
         </profile>
 

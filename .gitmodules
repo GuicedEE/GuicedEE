@@ -46,3 +46,6 @@
 [submodule "GuicedPersistenceWildfly"]
 	path = GuicedPersistenceWildfly
 	url = https://github.com/GedMarc/GuicedPersistence-Wildfly.git
+[submodule "GuicedPrimeFaces"]
+	path = GuicedPrimeFaces
+	url = https://github.com/GedMarc/Guiced-PrimeFaces.git
