@@ -42,7 +42,7 @@
             <modules>
                 <module>GuicedPersistence</module>
                 <!--<module>GuicedPersistenceJPA</module>-->
-                <module>GuicedPersistenceC3P0</module>
+                <!--<module>GuicedPersistenceC3P0</module>-->
                 <!--<module>HibernatePropertiesReader</module>-->
                 <!--<module>SystemPropertiesReader</module>-->
                 <module>GuicedPersistenceWildfly</module>
