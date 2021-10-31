@@ -4,14 +4,14 @@
 
     <parent>
         <groupId>com.guicedee</groupId>
-         <artifactId>guicedee-group</artifactId>
+        <artifactId>dev-kit</artifactId>
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>
 
     <artifactId>guicedee-projects</artifactId>
     <packaging>pom</packaging>
-
     <name>Guiced EE Projects</name>
+    <version>0.0.0_0-SNAPSHOT</version>
 
     <profiles>
         <profile>
