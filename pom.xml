@@ -122,7 +122,7 @@
             <dependency>
                 <groupId>com.guicedee</groupId>
                 <artifactId>tests-bom</artifactId>
-                <version>${project.version}</version>
+                <version>${guicedee.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
