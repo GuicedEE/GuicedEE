@@ -54,10 +54,6 @@
 	path = GuicedWebSockets
 	url = https://github.com/GedMarc/Guiced-WebSockets.git
 	branch = v2.0.0
-[submodule "GuicedPersistenceWildfly"]
-	path = GuicedPersistenceWildfly
-	url = https://github.com/GedMarc/GuicedPersistence-Wildfly.git
-	branch = v2.0.0
 [submodule "GuicedPrimeFaces"]
 	path = GuicedPrimeFaces
 	url = https://github.com/GedMarc/Guiced-PrimeFaces.git
