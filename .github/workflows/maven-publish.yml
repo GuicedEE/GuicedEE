@@ -37,3 +37,27 @@ jobs:
       USER_TOKEN: ${{secrets.USER_TOKEN}}
       SONA_USERNAME: ${{secrets.SONA_USERNAME}}
       SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+  GuicedWebSockets:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedServlets
+    with:
+      baseDir: 'GuicedWebSockets/'
+      name: 'Guiced Web Sockets'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+  GuicedUndertow:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedWebSockets
+    with:
+      baseDir: 'GuicedUndertow/'
+      name: 'Guiced Undertow'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
