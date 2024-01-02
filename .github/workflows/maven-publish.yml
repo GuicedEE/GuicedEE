@@ -109,4 +109,15 @@ jobs:
       USER_TOKEN: ${{secrets.USER_TOKEN}}
       SONA_USERNAME: ${{secrets.SONA_USERNAME}}
       SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
-
+  GuicedSwaggerUI:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedRest
+    with:
+      baseDir: 'GuicedSwaggerUI/'
+      name: 'Guiced Swagger'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
