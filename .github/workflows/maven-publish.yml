@@ -64,7 +64,7 @@ jobs:
   GuicedUndertow:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
     needs:
-      - GuicedWebSockets
+      - GuicedServlets
     with:
       baseDir: 'GuicedUndertow/'
       name: 'Guiced Undertow'
