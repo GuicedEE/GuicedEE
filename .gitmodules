@@ -1,51 +1,60 @@
 [submodule "GuicedJSF"]
 	path = GuicedJSF
 	url = https://github.com/GedMarc/Guiced-Servlets-JSF.git
+	branch = v2.0.0
 [submodule "GuicedHazelcast"]
 	path = GuicedHazelcast
 	url = https://github.com/GedMarc/GuicedHazelcast.git
+	branch = v2.0.0
 [submodule "GuicedHazelcastHibernate"]
 	path = GuicedHazelcastHibernate
 	url = https://github.com/GedMarc/Guiced-Hazelcast-Hibernate.git
+	branch = v2.0.0
 [submodule "GuiceInjection"]
 	path = GuiceInjection
-	url = https://github.com/GedMarc/GuiceInjection.git
+	url = https://github.com/GuicedEE/GuicedInjection.git
+	branch = v2.0.0
 [submodule "GuicedPersistence"]
 	path = GuicedPersistence
-	url = https://github.com/GedMarc/GuicedPersistence.git
+	url = https://github.com/GuicedEE/GuicedPersistence.git
+	branch = v2.0.0
 [submodule "GuicedPersistenceC3P0"]
 	path = GuicedPersistenceC3P0
 	url = https://github.com/GedMarc/GuicedPersistence-C3P0.git
+	branch = v2.0.0
 [submodule "GuicedRestServices"]
 	path = GuicedRestServices
 	url = https://github.com/GedMarc/GuicedRestServices.git
+	branch = v2.0.0
 [submodule "GuicedServlets"]
 	path = GuicedServlets
 	url = https://github.com/GedMarc/GuicedServlets.git
+	branch = v2.0.0
 [submodule "GuicedServletsRequestScoping"]
 	path = GuicedServletsRequestScoping
 	url = https://github.com/GedMarc/GuicedServletsRequestScoping.git
+	branch = v2.0.0
 [submodule "GuicedSwagger"]
 	path = GuicedSwagger
 	url = https://github.com/GedMarc/GuicedSwagger.git
+	branch = v2.0.0
 [submodule "GuicedSwaggerUI"]
 	path = GuicedSwaggerUI
 	url = https://github.com/GedMarc/Guiced-SwaggerUI.git
+	branch = v2.0.0
 [submodule "GuicedUndertow"]
 	path = GuicedUndertow
 	url = https://github.com/GedMarc/Guiced-Undertow.git
+	branch = v2.0.0
 [submodule "GuicedWebServices"]
 	path = GuicedWebServices
 	url = https://github.com/GedMarc/Guiced-WebServices.git
+	branch = v2.0.0
 [submodule "GuicedWebSockets"]
 	path = GuicedWebSockets
 	url = https://github.com/GedMarc/Guiced-WebSockets.git
-[submodule "GuicedLogMaster"]
-	path = GuicedLogMaster
-	url = https://github.com/GedMarc/LogMaster.git
-[submodule "GuicedPersistenceWildfly"]
-	path = GuicedPersistenceWildfly
-	url = https://github.com/GedMarc/GuicedPersistence-Wildfly.git
+	branch = v2.0.0
 [submodule "GuicedPrimeFaces"]
 	path = GuicedPrimeFaces
 	url = https://github.com/GedMarc/Guiced-PrimeFaces.git
+    branch = v2.0.0

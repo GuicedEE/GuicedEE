@@ -1,6 +1,11 @@
 name: Maven Package
 on:
   workflow_dispatch:
+    inputs:
+      centralRelease:
+        type: boolean
+        description: Run a release to maven central
+        default: false
   push:
 jobs:
   GuicedInjection:
@@ -13,3 +18,175 @@ jobs:
       USER_TOKEN: ${{secrets.USER_TOKEN}}
       SONA_USERNAME: ${{secrets.SONA_USERNAME}}
       SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedPersistence:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedInjection
+    with:
+      baseDir: 'GuicedPersistence/'
+      name: 'Guiced Persistence'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedPersistenceC3P0:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedPersistence
+    with:
+      baseDir: 'GuicedPersistenceC3P0/'
+      name: 'Guiced C3P0'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedServlets:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedInjection
+    with:
+      baseDir: 'GuicedServlets/'
+      name: 'Guiced Servlets'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedWebSockets:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedServlets
+    with:
+      baseDir: 'GuicedWebSockets/'
+      name: 'Guiced Web Sockets'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedUndertow:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedServlets
+    with:
+      baseDir: 'GuicedUndertow/'
+      name: 'Guiced Undertow'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedHazelcast:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedInjection
+    with:
+      baseDir: 'GuicedHazelcast/'
+      name: 'Guiced Hazelcast'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedHazelcastHibernate:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedHazelcast
+    with:
+      baseDir: 'GuicedHazelcastHibernate/'
+      name: 'Guiced Hazelcast Hibernate'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedRest:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedUndertow
+    with:
+      baseDir: 'GuicedRestServices/'
+      name: 'Guiced Rest Services'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedSessionPerTransaction:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedServlets
+      - GuicedPersistence
+    with:
+      baseDir: 'GuicedServletsRequestScoping/'
+      name: 'Guiced Session Per Transaction'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedOpenAPI:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedRest
+    with:
+      baseDir: 'GuicedSwagger/'
+      name: 'Guiced Open API'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedSwaggerUI:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedRest
+    with:
+      baseDir: 'GuicedSwaggerUI/'
+      name: 'Guiced Swagger'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedMicroProfileConfig:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedInjection
+    with:
+      baseDir: 'GuicedMicroProfileConfig/'
+      name: 'Guiced MicroProfile Config'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+
