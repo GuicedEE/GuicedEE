@@ -13,6 +13,7 @@ jobs:
     with:
       baseDir: 'GuiceInjection/'
       name: 'Guiced Injection'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -27,6 +28,7 @@ jobs:
     with:
       baseDir: 'GuicedPersistence/'
       name: 'Guiced Persistence'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -41,6 +43,7 @@ jobs:
     with:
       baseDir: 'GuicedPersistenceC3P0/'
       name: 'Guiced C3P0'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -55,6 +58,7 @@ jobs:
     with:
       baseDir: 'GuicedServlets/'
       name: 'Guiced Servlets'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -69,6 +73,7 @@ jobs:
     with:
       baseDir: 'GuicedWebSockets/'
       name: 'Guiced Web Sockets'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -83,6 +88,7 @@ jobs:
     with:
       baseDir: 'GuicedUndertow/'
       name: 'Guiced Undertow'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -97,6 +103,7 @@ jobs:
     with:
       baseDir: 'GuicedHazelcast/'
       name: 'Guiced Hazelcast'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -111,6 +118,7 @@ jobs:
     with:
       baseDir: 'GuicedHazelcastHibernate/'
       name: 'Guiced Hazelcast Hibernate'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -125,6 +133,7 @@ jobs:
     with:
       baseDir: 'GuicedRestServices/'
       name: 'Guiced Rest Services'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -140,6 +149,7 @@ jobs:
     with:
       baseDir: 'GuicedServletsRequestScoping/'
       name: 'Guiced Session Per Transaction'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -154,6 +164,7 @@ jobs:
     with:
       baseDir: 'GuicedSwagger/'
       name: 'Guiced Open API'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -168,6 +179,7 @@ jobs:
     with:
       baseDir: 'GuicedSwaggerUI/'
       name: 'Guiced Swagger'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
@@ -182,6 +194,7 @@ jobs:
     with:
       baseDir: 'GuicedMicroProfileConfig/'
       name: 'Guiced MicroProfile Config'
+      publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
       USER_TOKEN: ${{secrets.USER_TOKEN}}
