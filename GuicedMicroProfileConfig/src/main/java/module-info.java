@@ -8,7 +8,7 @@ module com.guicedee.microprofile.config {
 	
 	requires transitive io.smallrye.config.core;
 	
-	requires transitive com.guicedee.guicedinjection;
+	requires transitive com.guicedee.client;
 	requires org.apache.commons.beanutils;
 	requires static lombok;
 	

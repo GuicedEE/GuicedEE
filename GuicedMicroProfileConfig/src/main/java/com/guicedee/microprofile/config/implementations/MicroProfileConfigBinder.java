@@ -4,7 +4,6 @@ import com.google.common.base.*;
 import com.google.inject.*;
 import com.google.inject.matcher.*;
 import com.google.inject.spi.*;
-import com.guicedee.guicedinjection.*;
 import com.guicedee.guicedinjection.interfaces.*;
 import com.guicedee.microprofile.config.*;
 import io.smallrye.config.*;
