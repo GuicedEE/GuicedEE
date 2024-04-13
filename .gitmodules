@@ -58,3 +58,9 @@
 	path = GuicedPrimeFaces
 	url = https://github.com/GedMarc/Guiced-PrimeFaces.git
     branch = v2.0.0
+[submodule "GuicedVertx"]
+	path = GuicedVertx
+	url = https://github.com/GuicedEE/Guiced-Vert.x.git
+[submodule "GuicedVertxSockets"]
+	path = GuicedVertxSockets
+	url = https://github.com/GuicedEE/GuicedVertxSockets.git

@@ -46,11 +46,6 @@
             <artifactId>config-core</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.guicedee.services</groupId>
-            <artifactId>commons-beanutils</artifactId>
-        </dependency>
-
     </dependencies>
 
 
