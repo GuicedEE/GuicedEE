@@ -61,3 +61,6 @@
 [submodule "GuicedVertx"]
 	path = GuicedVertx
 	url = https://github.com/GuicedEE/Guiced-Vert.x.git
+[submodule "GuicedVertxSockets"]
+	path = GuicedVertxSockets
+	url = https://github.com/GuicedEE/GuicedVertxSockets.git
