@@ -4,6 +4,6 @@ module com.guicedee.microprofile.config.test {
 	requires static lombok;
 	
 	exports com.guicedee.microprofile.config.test to com.google.guice,org.apache.commons.beanutils;
-	opens com.guicedee.microprofile.config.test to org.junit.platform.commons;
+	opens com.guicedee.microprofile.config.test to org.junit.platform.commons,com.google.guice;
 	
 }
