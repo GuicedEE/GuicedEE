@@ -64,3 +64,6 @@
 [submodule "GuicedVertxSockets"]
 	path = GuicedVertxSockets
 	url = https://github.com/GuicedEE/GuicedVertxSockets.git
+[submodule "GuicedVertxSessionPerTransaction"]
+	path = GuicedVertxSessionPerTransaction
+	url = https://github.com/GuicedEE/GuicedVertxSessionPerTransaction.git
