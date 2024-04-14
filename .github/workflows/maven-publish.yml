@@ -129,7 +129,7 @@ jobs:
   GuicedRest:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
     needs:
-      - GuicedUndertow
+      - GuicedVertX
     with:
       baseDir: 'GuicedRestServices/'
       name: 'Guiced Rest Services'
@@ -148,7 +148,7 @@ jobs:
       - GuicedPersistence
     with:
       baseDir: 'GuicedServletsRequestScoping/'
-      name: 'Guiced Session Per Transaction'
+      name: 'Guiced-Servlet Session Per Transaction'
       publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
@@ -163,7 +163,7 @@ jobs:
       - GuicedRest
     with:
       baseDir: 'GuicedSwagger/'
-      name: 'Guiced Open API'
+      name: 'Guiced-Servlet OpenAPI'
       publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
@@ -175,10 +175,10 @@ jobs:
   GuicedSwaggerUI:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
     needs:
-      - GuicedRest
+      - GuicedUndertow
     with:
       baseDir: 'GuicedSwaggerUI/'
-      name: 'Guiced Swagger'
+      name: 'Guiced-Servlet SwaggerUI'
       publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
@@ -194,6 +194,36 @@ jobs:
     with:
       baseDir: 'GuicedMicroProfileConfig/'
       name: 'Guiced MicroProfile Config'
+      publishToCentral: ${{inputs.centralRelease}}
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedVertX:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedInjection
+    with:
+      baseDir: 'GuicedVertx/'
+      name: 'Guiced Vertx'
+      publishToCentral: ${{inputs.centralRelease}}
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
+  GuicedVertXSockets:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - GuicedVertX
+    with:
+      baseDir: 'GuicedVertxSockets/'
+      name: 'Guiced Vertx WebSockets'
       publishToCentral: ${{inputs.centralRelease}}
     secrets:
       USERNAME: ${{secrets.USERNAME}}
