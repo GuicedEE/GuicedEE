@@ -1,7 +1,3 @@
-[submodule "GuicedJSF"]
-	path = GuicedJSF
-	url = https://github.com/GedMarc/Guiced-Servlets-JSF.git
-	branch = v2.0.0
 [submodule "GuicedHazelcast"]
 	path = GuicedHazelcast
 	url = https://github.com/GedMarc/GuicedHazelcast.git
@@ -54,7 +50,12 @@
 	path = GuicedWebSockets
 	url = https://github.com/GedMarc/Guiced-WebSockets.git
 	branch = v2.0.0
-[submodule "GuicedPrimeFaces"]
-	path = GuicedPrimeFaces
-	url = https://github.com/GedMarc/Guiced-PrimeFaces.git
-    branch = v2.0.0
+[submodule "GuicedVertx"]
+	path = GuicedVertx
+	url = https://github.com/GuicedEE/Guiced-Vert.x.git
+[submodule "GuicedVertxSockets"]
+	path = GuicedVertxSockets
+	url = https://github.com/GuicedEE/GuicedVertxSockets.git
+[submodule "GuicedVertxSessionPerTransaction"]
+	path = GuicedVertxSessionPerTransaction
+	url = https://github.com/GuicedEE/GuicedVertxSessionPerTransaction.git

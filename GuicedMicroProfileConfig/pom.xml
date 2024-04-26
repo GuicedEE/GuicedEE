@@ -31,17 +31,19 @@
 
         <dependency>
             <groupId>com.guicedee</groupId>
+            <artifactId>guice-inject-client</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.guicedee</groupId>
             <artifactId>guice-injection</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>com.guicedee.services</groupId>
             <artifactId>config-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.guicedee.services</groupId>
-            <artifactId>commons-beanutils</artifactId>
         </dependency>
 
     </dependencies>

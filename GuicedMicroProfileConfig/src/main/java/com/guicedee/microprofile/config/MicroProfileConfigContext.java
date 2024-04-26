@@ -11,18 +11,19 @@ import lombok.extern.java.*;
 @Getter
 public class MicroProfileConfigContext implements IGuicePreStartup<MicroProfileConfigContext>
 {
-	@Getter
-	private static SmallRyeConfig config;
-	
-	@Override
-	public void onStartup()
-	{
-		SmallRyeConfigBuilder configBuilder = new SmallRyeConfigBuilder()
-				                                      .addDefaultSources()
-				                                      .addDefaultInterceptors()
-				                                      .addDiscoveredSources()
-				                                      .addDiscoveredConverters()
-				                                      .addDiscoveredInterceptors();
-		config = configBuilder.build();
-	}
+    @Getter
+    private static SmallRyeConfig config;
+
+    @Override
+    public void onStartup()
+    {
+        log.config("Starting MicroProfileConfigContext");
+        SmallRyeConfigBuilder configBuilder = new SmallRyeConfigBuilder()
+                .addDefaultSources()
+                .addDefaultInterceptors()
+                .addDiscoveredSources()
+                .addDiscoveredConverters()
+                .addDiscoveredInterceptors();
+        config = configBuilder.build();
+    }
 }
