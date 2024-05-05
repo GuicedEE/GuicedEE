@@ -46,3 +46,6 @@
 [submodule "GuicedVertxSessionPerTransaction"]
 	path = GuicedVertxSessionPerTransaction
 	url = https://github.com/GuicedEE/GuicedVertxSessionPerTransaction.git
+[submodule "GuicedRabbit"]
+	path = GuicedRabbit
+	url = https://github.com/GuicedEE/GuicedRabbit.git
