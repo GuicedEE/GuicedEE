@@ -49,3 +49,6 @@
 [submodule "GuicedRabbit"]
 	path = GuicedRabbit
 	url = https://github.com/GuicedEE/GuicedRabbit.git
+[submodule "GuicedCerial"]
+	path = GuicedCerial
+	url = https://github.com/GedMarc/GuicedCerial.git
