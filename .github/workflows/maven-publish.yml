@@ -175,7 +175,7 @@ jobs:
   GuicedSwaggerUI:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
     needs:
-      - GuicedUndertow
+      - GuicedVertX
     with:
       baseDir: 'GuicedSwaggerUI/'
       name: 'Guiced-Servlet SwaggerUI'
