@@ -52,3 +52,6 @@
 [submodule "GuicedCerial"]
 	path = GuicedCerial
 	url = https://github.com/GedMarc/GuicedCerial.git
+[submodule "GuicedTelemetry"]
+	path = GuicedTelemetry
+	url = https://github.com/GuicedEE/GuicedTelemetry.git
