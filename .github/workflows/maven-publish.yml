@@ -10,6 +10,7 @@ on:
 jobs:
   GuicedInjection:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs: GuicedVertX
     with:
       baseDir: 'GuiceInjection/'
       name: 'Guiced Injection'
@@ -175,7 +176,7 @@ jobs:
   GuicedSwaggerUI:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
     needs:
-      - GuicedVertX
+      - GuicedInjection
     with:
       baseDir: 'GuicedSwaggerUI/'
       name: 'Guiced-Servlet SwaggerUI'
@@ -205,7 +206,6 @@ jobs:
   GuicedVertX:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
     needs:
-      - GuicedInjection
     with:
       baseDir: 'GuicedVertx/'
       name: 'Guiced Vertx'
@@ -220,7 +220,7 @@ jobs:
   GuicedVertXSockets:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
     needs:
-      - GuicedVertX
+      - GuicedInjection
     with:
       baseDir: 'GuicedVertxSockets/'
       name: 'Guiced Vertx WebSockets'
@@ -235,7 +235,7 @@ jobs:
   GuicedVertXSessionPerTransaction:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
     needs:
-      - GuicedVertX
+      - GuicedInjection
     with:
       baseDir: 'GuicedVertxSessionPerTransaction/'
       name: 'Guiced Vertx Session-Per-Transaction'
@@ -250,7 +250,7 @@ jobs:
   GuicedRabbit:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
     needs:
-      - GuicedVertX
+      - GuicedInjection
     with:
       baseDir: 'GuicedRabbit/'
       name: 'Guiced Rabbit'
