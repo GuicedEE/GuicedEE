@@ -205,7 +205,6 @@ jobs:
       GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
   GuicedVertX:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
-    needs:
     with:
       baseDir: 'GuicedVertx/'
       name: 'Guiced Vertx'
