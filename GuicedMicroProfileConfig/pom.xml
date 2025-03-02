@@ -37,8 +37,7 @@
 
         <dependency>
             <groupId>com.guicedee</groupId>
-            <artifactId>guice-injection</artifactId>
-            <scope>test</scope>
+            <artifactId>guiced-vertx</artifactId>
         </dependency>
 
         <dependency>
