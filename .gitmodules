@@ -78,3 +78,6 @@
 	path = GuicedVertxWeb
 	url = https://github.com/GuicedEE/GuicedVertxWeb
     branch = master
+[submodule "GuicedVertxPersistence"]
+	path = GuicedVertxPersistence
+	url = https://github.com/GedMarc/GuicedVertxPersistence.git
