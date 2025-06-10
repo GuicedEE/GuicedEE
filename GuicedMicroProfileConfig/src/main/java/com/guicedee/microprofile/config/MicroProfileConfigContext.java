@@ -5,13 +5,11 @@ import com.guicedee.vertx.spi.VertXPreStartup;
 import io.smallrye.config.SmallRyeConfig;
 import io.smallrye.config.SmallRyeConfigBuilder;
 import io.vertx.core.Future;
-import jakarta.inject.Singleton;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.List;
 
-@Singleton
 @Log4j2
 @Getter
 public class MicroProfileConfigContext implements IGuicePreStartup<MicroProfileConfigContext>

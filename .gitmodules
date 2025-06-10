@@ -81,3 +81,6 @@
 [submodule "GuicedVertxPersistence"]
 	path = GuicedVertxPersistence
 	url = https://github.com/GedMarc/GuicedVertxPersistence.git
+[submodule "GuicedCDI"]
+	path = GuicedCDI
+	url = https://github.com/GuicedEE/GuicedCDI

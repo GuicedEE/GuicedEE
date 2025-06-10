@@ -1,5 +1,5 @@
 module com.guicedee.microprofile.config.test {
-	requires com.guicedee.microprofile.config;
+	requires transitive com.guicedee.microprofile.config;
 	requires org.junit.jupiter.api;
 	requires static lombok;
 	
