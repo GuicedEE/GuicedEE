@@ -84,3 +84,6 @@
 [submodule "GuicedCDI"]
 	path = GuicedCDI
 	url = https://github.com/GuicedEE/GuicedCDI
+[submodule "rules"]
+	path = rules
+	url = https://github.com/GuicedEE/junie-guides/

@@ -36,3 +36,4 @@ flatter.pom
 **.iml
 /GuicedPersistence/.idea/
 *.rar
+/GuicedMicroProfileConfig/logs/
