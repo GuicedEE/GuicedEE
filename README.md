@@ -1,12 +1,5 @@
 # 🧩 GuicedEE Framework
 
-   _____             _           _____ _____ 
-  / ____|           | |         | ____|  __ \
- | |  __ _   _  ___ | |__   ___ | |__ | |  | |
- | | |_ | | | |/ _ \| '_ \ / _ \|  __|| |  | |
- | |__| | |_| | (_) | |_) |  __/| |___| |__| |
-  \_____|\__,_|\___/|_.__/ \___||_____|_____/
-
 > *Modern Modular Java — Human-Centric, Fast, and Fearlessly Simple.*
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/GuicedEE/GuicedEE/build.yml?branch=master&style=flat-square)](https://github.com/GuicedEE/GuicedEE/actions)
@@ -47,24 +40,26 @@ cd GuicedEE
 mvn clean install
 ```
 
-Add it to your project:
+Add it to your project (versions are controlled by the BOM):
 
 ```xml
-<dependency>
-  <groupId>com.guicedee</groupId>
-  <artifactId>guicedee</artifactId>
-  <version>${guicedee.version}</version>
-</dependency>
-
 <dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.guicedee</groupId>
+      <artifactId>guicedee-bom</artifactId>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
   <dependency>
     <groupId>com.guicedee</groupId>
-    <artifactId>guicedee-bom</artifactId>
-    <version>${guicedee.version}</version>
-    <type>pom</type>
-    <scope>import</scope>
+    <artifactId>guicedee</artifactId>
   </dependency>
-</dependencyManagement>
+</dependencies>
 ```
 
 ---
