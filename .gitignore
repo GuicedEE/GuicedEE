@@ -37,3 +37,4 @@ flatter.pom
 /GuicedPersistence/.idea/
 *.rar
 /GuicedMicroProfileConfig/logs/
+/GuicedCerial/cerial/
