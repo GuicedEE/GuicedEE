@@ -3,7 +3,8 @@
 > *Modern Modular Java — Human-Centric, Fast, and Fearlessly Simple.*
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/GuicedEE/GuicedEE/build.yml?branch=master&style=flat-square)](https://github.com/GuicedEE/GuicedEE/actions)
-[![Java](https://img.shields.io/badge/Java-24%2B-007396?style=flat-square)](https://openjdk.org/projects/jdk/24/)
+[![Java](https://img.shields.io/badge/JDK-25%2B-007396?style=flat-square)](https://openjdk.org/projects/jdk/25/)
+[![Maven](https://img.shields.io/badge/Maven-%E2%89%A53.9.1-6E3FCE?style=flat-square)](https://maven.apache.org/)
 [![Vert.x](https://img.shields.io/badge/Vert.x-5.0-4B4BFF?style=flat-square)](https://vertx.io/)
 [![JPMS Level](https://img.shields.io/badge/JPMS-Level%203-008080?style=flat-square)](#)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green?style=flat-square)](LICENSE)
@@ -13,10 +14,17 @@
 
 ### 👋 Welcome
 
-GuicedEE is a **Level-3 modular Java framework** built on top of **Guice** and **Vert.x 5**, engineered for modern, cloud-native applications.  
+GuicedEE is a **Level-3 modular Java framework** built on **Guice** and **Vert.x 5**, engineered for modern, cloud-native applications.
 It is designed to be **fast, transparent, and vendor-neutral**, using **JPMS modules**, **service loaders**, and **post-injection AOP** to deliver true modularity — without the weight of traditional enterprise stacks.
 
 > This project isn’t about reinventing Java EE — it’s about rediscovering *clarity and craft* in Java software design.
+
+---
+
+## ✅ Requirements
+
+- **JDK 25+**
+- **Maven 3.9.1+**
 
 ---
 
@@ -40,7 +48,7 @@ cd GuicedEE
 mvn clean install
 ```
 
-Add it to your project (versions are controlled by the BOM):
+Add it to your project (versions are managed by the BOM):
 
 ```xml
 <dependencyManagement>
@@ -73,9 +81,24 @@ Add it to your project (versions are controlled by the BOM):
 | [![GuicedInjection](https://img.shields.io/badge/GuicedInjection-core-blue?style=flat-square)](https://github.com/GuicedEE/GuicedInjection) | Foundation IoC and AOP layer |
 | ➡️ [![Persistence](https://img.shields.io/badge/Persistence-reactive-yellow?style=flat-square)](https://github.com/GuicedEE/Persistence) | Reactive database and entity management |
 | ➡️ [![Guiced-Vert.x](https://img.shields.io/badge/Vert.x-Integration-purple?style=flat-square)](https://github.com/GuicedEE/Guiced-Vert.x) | Vert.x 5 reactive core integration |
+| ➡️ [![Vertx Web](https://img.shields.io/badge/Vert.x-Web-4B4BFF?style=flat-square)](https://github.com/GuicedEE/GuicedVertxWeb) | HTTP routing, handlers, middleware |
+| ➡️ [![Vertx Persistence](https://img.shields.io/badge/Vert.x-Persistence-4B4BFF?style=flat-square)](https://github.com/GuicedEE/GuicedVertxPersistence) | Reactive DB helpers for Vert.x |
+| ➡️ [![Session Per Tx](https://img.shields.io/badge/Vert.x-Session_per_Tx-4B4BFF?style=flat-square)](https://github.com/GuicedEE/GuicedVertxSessionPerTransaction) | Session-per-transaction strategy |
 | ➡️ [![Telemetry](https://img.shields.io/badge/Telemetry-observability-orange?style=flat-square)](https://github.com/GuicedEE/GuicedTelemetry) | Metrics, tracing, and OpenTelemetry |
+| ➡️ [![Sockets](https://img.shields.io/badge/Vert.x-Sockets-4B4BFF?style=flat-square)](https://github.com/GuicedEE/GuicedVertxSockets) | WS/SSE integration |
+| ➡️ [![WebSockets](https://img.shields.io/badge/Jakarta-WebSockets-lightgrey?style=flat-square)](https://github.com/GuicedEE/WebSockets) | Jakarta WebSocket layer |
+| ➡️ [![REST](https://img.shields.io/badge/REST-Services-lightgrey?style=flat-square)](https://github.com/GuicedEE/RestServices) | REST scaffolding |
+| ➡️ [![Servlets](https://img.shields.io/badge/Jakarta-Servlets-lightgrey?style=flat-square)](https://github.com/GuicedEE/Servlets) | Jakarta Servlet integrations |
+| ➡️ [![Undertow](https://img.shields.io/badge/Undertow-server-lightgrey?style=flat-square)](https://github.com/GuicedEE/Undertow) | Undertow server bindings |
+| ➡️ [![OpenAPI](https://img.shields.io/badge/OpenAPI-generated-lightgrey?style=flat-square)](https://github.com/GuicedEE/OpenAPI) | OpenAPI codegen |
+| ➡️ [![SwaggerUI](https://img.shields.io/badge/Swagger-UI-lightgrey?style=flat-square)](https://github.com/GuicedEE/SwaggerUI) | Swagger UI packaging |
+| ➡️ [![Hazelcast](https://img.shields.io/badge/Hazelcast-cache-blue?style=flat-square)](https://github.com/GuicedEE/Hazelcast) | Distributed caching |
+| ➡️ [![Hazelcast-Hibernate](https://img.shields.io/badge/Hibernate-2L_cache-blue?style=flat-square)](https://github.com/GuicedEE/Hazelcast-Hibernate) | Hibernate L2 cache |
+| ➡️ [![RabbitMQ](https://img.shields.io/badge/RabbitMQ-integration-yellow?style=flat-square)](https://github.com/GuicedEE/GuicedRabbit) | Messaging adapters |
 | ➡️ [![IntelliJ Plugin](https://img.shields.io/badge/IntelliJ_Plugin-tools-lightgrey?style=flat-square)](https://github.com/GuicedEE/GuicedEEIntelliJPlugin) | Developer experience tools |
 | ➡️ [![Examples](https://img.shields.io/badge/Examples-live_demos-success?style=flat-square)](https://github.com/GuicedEE/Examples) | Real-world implementations and demos |
+
+> Also see: **[ai-rules](https://github.com/GuicedEE/ai-rules)** — a curated set of prompt/rule files to auto-assist IDE AI agents (Junie / Copilot / Claude) when working with GuicedEE.
 
 ---
 
@@ -84,7 +107,10 @@ Add it to your project (versions are controlled by the BOM):
 ```mermaid
 graph TD
     A[GuicedInjection<br/>IoC + AOP] --> B[Persistence<br/>Reactive Data]
-    B --> C[Vert.x Integration<br/>Event Loop / Web]
+    B --> C[Vert.x Integration<br/>Web / Event Bus]
+    C --> C1[Vertx Web]
+    C --> C2[Vertx Persistence]
+    C --> C3[Session per Tx]
     C --> D[Telemetry<br/>Metrics / Tracing]
     D --> E[IntelliJ Plugin<br/>Dev Tools]
     E --> F[Examples<br/>Real Apps]
@@ -94,6 +120,9 @@ graph TD
     subgraph Reactive Stack
       B
       C
+      C1
+      C2
+      C3
     end
     subgraph Platform
       D
@@ -112,7 +141,7 @@ If you’re exploring GuicedEE, contributing docs, or experimenting with reactiv
 - 💬 [Start a discussion](https://github.com/GuicedEE/GuicedEE/discussions)
 - 🪶 [Report an issue](https://github.com/GuicedEE/GuicedEE/issues)
 - 🧩 [Read the rules](https://github.com/GuicedEE/junie-guides/blob/master/RULES.md)
-- 🧭 [Follow the prompts](https://github.com/GuicedEE/junie-guides/tree/master/generative)
+- 🤖 [AI setup helpers](https://github.com/GuicedEE/ai-rules)
 
 ---
 
@@ -120,7 +149,7 @@ If you’re exploring GuicedEE, contributing docs, or experimenting with reactiv
 
 > “We design, document, and build together.”
 
-GuicedEE exists to make modular Java human again — approachable, performant, and precise.  
+GuicedEE exists to make modular Java human again — approachable, performant, and precise.
 We value clarity over cleverness, and community over control.
 
 ---
