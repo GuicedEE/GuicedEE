@@ -1,13 +1,16 @@
 package com.guicedee.microprofile.config;
 
-import com.guicedee.guicedinjection.interfaces.*;
-import io.smallrye.config.*;
-import jakarta.inject.*;
-import lombok.*;
-import lombok.extern.java.*;
+import com.guicedee.guicedinjection.interfaces.IGuicePreStartup;
+import com.guicedee.vertx.spi.VertXPreStartup;
+import io.smallrye.config.SmallRyeConfig;
+import io.smallrye.config.SmallRyeConfigBuilder;
+import io.vertx.core.Future;
+import lombok.Getter;
+import lombok.extern.log4j.Log4j2;
 
-@Singleton
-@Log
+import java.util.List;
+
+@Log4j2
 @Getter
 public class MicroProfileConfigContext implements IGuicePreStartup<MicroProfileConfigContext>
 {
@@ -15,15 +18,19 @@ public class MicroProfileConfigContext implements IGuicePreStartup<MicroProfileC
     private static SmallRyeConfig config;
 
     @Override
-    public void onStartup()
+    public List<Future<Boolean>> onStartup()
     {
-        log.config("Starting MicroProfileConfigContext");
-        SmallRyeConfigBuilder configBuilder = new SmallRyeConfigBuilder()
-                .addDefaultSources()
-                .addDefaultInterceptors()
-                .addDiscoveredSources()
-                .addDiscoveredConverters()
-                .addDiscoveredInterceptors();
-        config = configBuilder.build();
+        return List.of(VertXPreStartup.getVertx().executeBlocking(() -> {
+            log.debug("Starting MicroProfileConfigContext");
+            SmallRyeConfigBuilder configBuilder = new SmallRyeConfigBuilder()
+                    .addDefaultSources()
+                    .addDefaultInterceptors()
+                    .addDiscoveredSources()
+                    .addDiscoveredConverters()
+                    .addDiscoveredInterceptors();
+            config = configBuilder.build();
+            return true;
+        }));
     }
+
 }

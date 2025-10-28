@@ -1,6 +1,6 @@
 package com.guicedee.microprofile.config.implementations;
 
-import com.google.inject.InjectionPointProvider;
+import com.google.inject.gee.InjectionPointProvider;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import java.lang.annotation.Annotation;

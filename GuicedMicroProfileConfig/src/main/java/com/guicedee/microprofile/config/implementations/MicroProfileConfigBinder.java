@@ -1,6 +1,9 @@
 package com.guicedee.microprofile.config.implementations;
 
+import com.google.common.base.Strings;
 import com.google.inject.AbstractModule;
+import com.google.inject.Key;
+import com.google.inject.TypeLiteral;
 import com.guicedee.client.IGuiceContext;
 import com.guicedee.guicedinjection.interfaces.IGuiceModule;
 import com.guicedee.microprofile.config.MicroProfileConfigContext;
@@ -11,14 +14,16 @@ import io.smallrye.config.SmallRyeConfig;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j2;
 import org.eclipse.microprofile.config.ConfigValue;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import java.lang.reflect.Field;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
-@Log
+@Log4j2
 public class MicroProfileConfigBinder extends AbstractModule implements IGuiceModule<MicroProfileConfigBinder>
 {
     @Override
@@ -53,6 +58,19 @@ public class MicroProfileConfigBinder extends AbstractModule implements IGuiceMo
                                                               .getConfigValue(annotation.name());
                                                       return configValue.getValue();
                                                   });
+                                bind(Key.get(new TypeLiteral<Optional<String>>()
+                                {
+                                }, annotation))
+                                        .toProvider(() -> {
+                                            ConfigValue configValue = MicroProfileConfigContext
+                                                    .getConfig()
+                                                    .getConfigValue(annotation.name());
+                                            if (Strings.isNullOrEmpty(configValue.getValue()))
+                                            {
+                                                return Optional.of(configValue.getValue());
+                                            }
+                                            return Optional.empty();
+                                        });
                             }
                             else if (Boolean.class.isAssignableFrom(declaredField.getType()) || boolean.class.isAssignableFrom(declaredField.getType()))
                             {
@@ -65,6 +83,19 @@ public class MicroProfileConfigBinder extends AbstractModule implements IGuiceMo
                                                                .getConfigValue(annotation.name());
                                                        return Boolean.parseBoolean(configValue.getValue());
                                                    });
+                                bind(Key.get(new TypeLiteral<Optional<Boolean>>()
+                                {
+                                }, annotation))
+                                        .toProvider(() -> {
+                                            ConfigValue configValue = MicroProfileConfigContext
+                                                    .getConfig()
+                                                    .getConfigValue(annotation.name());
+                                            if (Strings.isNullOrEmpty(configValue.getValue()))
+                                            {
+                                                return Optional.of(Boolean.parseBoolean(configValue.getValue()));
+                                            }
+                                            return Optional.empty();
+                                        });
                             }
                             else if (Integer.class.isAssignableFrom(declaredField.getType()) || int.class.isAssignableFrom(declaredField.getType()))
                             {
@@ -78,6 +109,19 @@ public class MicroProfileConfigBinder extends AbstractModule implements IGuiceMo
                                                                .getConfigValue(annotation.name());
                                                        return Integer.parseInt(configValue.getValue());
                                                    });
+                                bind(Key.get(new TypeLiteral<Optional<Integer>>()
+                                {
+                                }, annotation))
+                                        .toProvider(() -> {
+                                            ConfigValue configValue = MicroProfileConfigContext
+                                                    .getConfig()
+                                                    .getConfigValue(annotation.name());
+                                            if (Strings.isNullOrEmpty(configValue.getValue()))
+                                            {
+                                                return Optional.of(Integer.parseInt(configValue.getValue()));
+                                            }
+                                            return Optional.empty();
+                                        });
                             }
                             else if (Double.class.isAssignableFrom(declaredField.getType()) || double.class.isAssignableFrom(declaredField.getType()))
                             {
@@ -90,6 +134,19 @@ public class MicroProfileConfigBinder extends AbstractModule implements IGuiceMo
                                                               .getConfigValue(annotation.name());
                                                       return Double.parseDouble(configValue.getValue());
                                                   });
+                                bind(Key.get(new TypeLiteral<Optional<Double>>()
+                                {
+                                }, annotation))
+                                        .toProvider(() -> {
+                                            ConfigValue configValue = MicroProfileConfigContext
+                                                    .getConfig()
+                                                    .getConfigValue(annotation.name());
+                                            if (Strings.isNullOrEmpty(configValue.getValue()))
+                                            {
+                                                return Optional.of(Double.parseDouble(configValue.getValue()));
+                                            }
+                                            return Optional.empty();
+                                        });
                             }
                             else if (Float.class.isAssignableFrom(declaredField.getType()) || float.class.isAssignableFrom(declaredField.getType()))
                             {
@@ -102,6 +159,19 @@ public class MicroProfileConfigBinder extends AbstractModule implements IGuiceMo
                                                              .getConfigValue(annotation.name());
                                                      return Float.parseFloat(configValue.getValue());
                                                  });
+                                bind(Key.get(new TypeLiteral<Optional<Float>>()
+                                {
+                                }, annotation))
+                                        .toProvider(() -> {
+                                            ConfigValue configValue = MicroProfileConfigContext
+                                                    .getConfig()
+                                                    .getConfigValue(annotation.name());
+                                            if (Strings.isNullOrEmpty(configValue.getValue()))
+                                            {
+                                                return Optional.of(Float.parseFloat(configValue.getValue()));
+                                            }
+                                            return Optional.empty();
+                                        });
                             }
                             else if (Long.class.isAssignableFrom(declaredField.getType()) || long.class.isAssignableFrom(declaredField.getType()))
                             {
@@ -114,6 +184,19 @@ public class MicroProfileConfigBinder extends AbstractModule implements IGuiceMo
                                                             .getConfigValue(annotation.name());
                                                     return Long.parseLong(configValue.getValue());
                                                 });
+                                bind(Key.get(new TypeLiteral<Optional<Long>>()
+                                {
+                                }, annotation))
+                                        .toProvider(() -> {
+                                            ConfigValue configValue = MicroProfileConfigContext
+                                                    .getConfig()
+                                                    .getConfigValue(annotation.name());
+                                            if (Strings.isNullOrEmpty(configValue.getValue()))
+                                            {
+                                                return Optional.of(Long.parseLong(configValue.getValue()));
+                                            }
+                                            return Optional.empty();
+                                        });
                             }
                         }
                     }

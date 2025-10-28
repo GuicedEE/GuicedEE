@@ -1,48 +1,89 @@
 [submodule "GuicedHazelcast"]
 	path = GuicedHazelcast
 	url = https://github.com/GedMarc/GuicedHazelcast.git
+	branch = master
 [submodule "GuicedHazelcastHibernate"]
 	path = GuicedHazelcastHibernate
 	url = https://github.com/GedMarc/Guiced-Hazelcast-Hibernate.git
+	branch = master
 [submodule "GuiceInjection"]
 	path = GuiceInjection
 	url = https://github.com/GuicedEE/GuicedInjection.git
+	branch = master
 [submodule "GuicedPersistence"]
 	path = GuicedPersistence
 	url = https://github.com/GuicedEE/GuicedPersistence.git
+	branch = master
 [submodule "GuicedPersistenceC3P0"]
 	path = GuicedPersistenceC3P0
 	url = https://github.com/GedMarc/GuicedPersistence-C3P0.git
+	branch = master
 [submodule "GuicedRestServices"]
 	path = GuicedRestServices
 	url = https://github.com/GedMarc/GuicedRestServices.git
+	branch = master
 [submodule "GuicedServlets"]
 	path = GuicedServlets
 	url = https://github.com/GedMarc/GuicedServlets.git
+	branch = master
 [submodule "GuicedServletsRequestScoping"]
 	path = GuicedServletsRequestScoping
 	url = https://github.com/GedMarc/GuicedServletsRequestScoping.git
+	branch = master
 [submodule "GuicedSwagger"]
 	path = GuicedSwagger
 	url = https://github.com/GedMarc/GuicedSwagger.git
+	branch = master
 [submodule "GuicedSwaggerUI"]
 	path = GuicedSwaggerUI
 	url = https://github.com/GedMarc/Guiced-SwaggerUI.git
+	branch = master
 [submodule "GuicedUndertow"]
 	path = GuicedUndertow
 	url = https://github.com/GedMarc/Guiced-Undertow.git
+	branch = master
 [submodule "GuicedWebServices"]
 	path = GuicedWebServices
 	url = https://github.com/GedMarc/Guiced-WebServices.git
+	branch = master
 [submodule "GuicedWebSockets"]
 	path = GuicedWebSockets
 	url = https://github.com/GedMarc/Guiced-WebSockets.git
+	branch = master
 [submodule "GuicedVertx"]
 	path = GuicedVertx
 	url = https://github.com/GuicedEE/Guiced-Vert.x.git
+	branch = master
 [submodule "GuicedVertxSockets"]
 	path = GuicedVertxSockets
 	url = https://github.com/GuicedEE/GuicedVertxSockets.git
+	branch = master
 [submodule "GuicedVertxSessionPerTransaction"]
 	path = GuicedVertxSessionPerTransaction
 	url = https://github.com/GuicedEE/GuicedVertxSessionPerTransaction.git
+	branch = master
+[submodule "GuicedRabbit"]
+	path = GuicedRabbit
+	url = https://github.com/GuicedEE/GuicedRabbit.git
+	branch = master
+[submodule "GuicedCerial"]
+	path = GuicedCerial
+	url = https://github.com/GedMarc/GuicedCerial.git
+	branch = master
+[submodule "GuicedTelemetry"]
+	path = GuicedTelemetry
+	url = https://github.com/GuicedEE/GuicedTelemetry.git
+	branch = master
+[submodule "GuicedVertxWeb"]
+	path = GuicedVertxWeb
+	url = https://github.com/GuicedEE/GuicedVertxWeb
+    branch = master
+[submodule "GuicedVertxPersistence"]
+	path = GuicedVertxPersistence
+	url = https://github.com/GedMarc/GuicedVertxPersistence.git
+[submodule "GuicedCDI"]
+	path = GuicedCDI
+	url = https://github.com/GuicedEE/GuicedCDI
+[submodule "rules"]
+	path = rules
+	url = https://github.com/GuicedEE/junie-guides/
