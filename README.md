@@ -2,8 +2,7 @@
 
 > *Modern Modular Java — Human-Centric, Fast, and Fearlessly Simple.*
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/GuicedEE/GuicedEE/build.yml?branch=master&style=flat-square)](https://github.com/GuicedEE/GuicedEE/actions)
-[![Release Workflow](https://img.shields.io/github/actions/workflow/status/GuicedEE/GuicedEE/release.yml?branch=master&label=Release%20Workflow&color=8A2BE2&style=flat-square)](https://github.com/GuicedEE/GuicedEE/actions/workflows/release.yml)
+[![Maven Package](https://img.shields.io/github/actions/workflow/status/GuicedEE/GuicedEE/maven-publish.yml?branch=master&label=Maven%20Package&style=flat-square)](https://github.com/GuicedEE/GuicedEE/actions/workflows/maven-publish.yml)
 [![Version](https://img.shields.io/badge/Version-SNAPSHOT-orange?style=flat-square)](#)
 [![AI-Aligned (optional)](https://img.shields.io/badge/AI%E2%80%91Aligned-optional-lightgrey?style=flat-square)](https://github.com/GuicedEE/ai-rules)
 [![JDK](https://img.shields.io/badge/JDK-25%2B-007396?style=flat-square)](https://openjdk.org/projects/jdk/25/)
@@ -83,29 +82,25 @@ Add it to your project (versions are managed by the BOM):
 
 ## 🧬 The GuicedEE Ecosystem
 
-> *Each module builds on the one before it — a living chain of modular components.*
+> Active modules in this repository. Deprecated/removed modules have been excluded.
 
-| Chain | Description |
-|-------|--------------|
+| Module | Description |
+|--------|-------------|
 | [![GuicedInjection](https://img.shields.io/badge/GuicedInjection-core-blue?style=flat-square)](https://github.com/GuicedEE/GuicedInjection) | Foundation IoC and AOP layer |
-| ➡️ [![Persistence](https://img.shields.io/badge/Persistence-reactive-yellow?style=flat-square)](https://github.com/GuicedEE/Persistence) | Reactive database and entity management |
 | ➡️ [![Guiced-Vert.x](https://img.shields.io/badge/Vert.x-Integration-purple?style=flat-square)](https://github.com/GuicedEE/Guiced-Vert.x) | Vert.x 5 reactive core integration |
 | ➡️ [![Vertx Web](https://img.shields.io/badge/Vert.x-Web-4B4BFF?style=flat-square)](https://github.com/GuicedEE/GuicedVertxWeb) | HTTP routing, handlers, middleware |
-| ➡️ [![Vertx Persistence](https://img.shields.io/badge/Vert.x-Persistence-4B4BFF?style=flat-square)](https://github.com/GuicedEE/GuicedVertxPersistence) | Reactive DB helpers for Vert.x |
-| ➡️ [![Session Per Tx](https://img.shields.io/badge/Vert.x-Session_per_Tx-4B4BFF?style=flat-square)](https://github.com/GuicedEE/GuicedVertxSessionPerTransaction) | Session-per-transaction strategy |
+| ➡️ [![REST Services](https://img.shields.io/badge/Guiced-REST-lightgrey?style=flat-square)](https://github.com/GedMarc/GuicedRestServices) | REST scaffolding |
+| ➡️ [![Web Services](https://img.shields.io/badge/Guiced-Web_Services-lightgrey?style=flat-square)](https://github.com/GedMarc/Guiced-WebServices) | SOAP/Web service helpers |
+| ➡️ [![OpenAPI](https://img.shields.io/badge/Guiced-Swagger-lightgrey?style=flat-square)](https://github.com/GedMarc/GuicedSwagger) | OpenAPI integration |
+| ➡️ [![SwaggerUI](https://img.shields.io/badge/Swagger-UI-lightgrey?style=flat-square)](https://github.com/GedMarc/Guiced-SwaggerUI) | Swagger UI packaging |
+| ➡️ [![Vertx Persistence](https://img.shields.io/badge/Vert.x-Persistence-4B4BFF?style=flat-square)](https://github.com/GedMarc/GuicedVertxPersistence) | Reactive DB helpers for Vert.x |
+| ➡️ [![Hazelcast](https://img.shields.io/badge/Hazelcast-cache-blue?style=flat-square)](https://github.com/GedMarc/GuicedHazelcast) | Distributed caching (Hazelcast v7 reactive) |
+| ➡️ [![Hazelcast-Hibernate](https://img.shields.io/badge/Hibernate-2L_cache-blue?style=flat-square)](https://github.com/GedMarc/Guiced-Hazelcast-Hibernate) | Hibernate L2 cache |
 | ➡️ [![Telemetry](https://img.shields.io/badge/Telemetry-observability-orange?style=flat-square)](https://github.com/GuicedEE/GuicedTelemetry) | Metrics, tracing, and OpenTelemetry |
 | ➡️ [![Sockets](https://img.shields.io/badge/Vert.x-Sockets-4B4BFF?style=flat-square)](https://github.com/GuicedEE/GuicedVertxSockets) | WS/SSE integration |
-| ➡️ [![WebSockets](https://img.shields.io/badge/Jakarta-WebSockets-lightgrey?style=flat-square)](https://github.com/GuicedEE/WebSockets) | Jakarta WebSocket layer |
-| ➡️ [![REST](https://img.shields.io/badge/REST-Services-lightgrey?style=flat-square)](https://github.com/GuicedEE/RestServices) | REST scaffolding |
-| ➡️ [![Servlets](https://img.shields.io/badge/Jakarta-Servlets-lightgrey?style=flat-square)](https://github.com/GuicedEE/Servlets) | Jakarta Servlet integrations |
-| ➡️ [![Undertow](https://img.shields.io/badge/Undertow-server-lightgrey?style=flat-square)](https://github.com/GuicedEE/Undertow) | Undertow server bindings |
-| ➡️ [![OpenAPI](https://img.shields.io/badge/OpenAPI-generated-lightgrey?style=flat-square)](https://github.com/GuicedEE/OpenAPI) | OpenAPI codegen |
-| ➡️ [![SwaggerUI](https://img.shields.io/badge/Swagger-UI-lightgrey?style=flat-square)](https://github.com/GuicedEE/SwaggerUI) | Swagger UI packaging |
-| ➡️ [![Hazelcast](https://img.shields.io/badge/Hazelcast-cache-blue?style=flat-square)](https://github.com/GuicedEE/Hazelcast) | Distributed caching |
-| ➡️ [![Hazelcast-Hibernate](https://img.shields.io/badge/Hibernate-2L_cache-blue?style=flat-square)](https://github.com/GuicedEE/Hazelcast-Hibernate) | Hibernate L2 cache |
 | ➡️ [![RabbitMQ](https://img.shields.io/badge/RabbitMQ-integration-yellow?style=flat-square)](https://github.com/GuicedEE/GuicedRabbit) | Messaging adapters |
-| ➡️ [![IntelliJ Plugin](https://img.shields.io/badge/IntelliJ_Plugin-tools-lightgrey?style=flat-square)](https://github.com/GuicedEE/GuicedEEIntelliJPlugin) | Developer experience tools |
-| ➡️ [![Examples](https://img.shields.io/badge/Examples-live_demos-success?style=flat-square)](https://github.com/GuicedEE/Examples) | Real-world implementations and demos |
+| ➡️ [![CDI](https://img.shields.io/badge/CDI-bridge-lightgrey?style=flat-square)](https://github.com/GuicedEE/GuicedCDI) | CDI compatibility bridge |
+| ➡️ [![Cerial](https://img.shields.io/badge/Serial-Ports-lightgrey?style=flat-square)](https://github.com/GedMarc/GuicedCerial) | Serial/COM port utilities |
 
 > Also see: **[ai-rules](https://github.com/GuicedEE/ai-rules)** — a curated set of prompt/rule files to auto-assist IDE AI agents (Junie / Copilot / Claude) when working with GuicedEE.
 
@@ -119,7 +114,6 @@ graph TD
     B --> C[Vert.x Integration<br/>Web / Event Bus]
     C --> C1[Vertx Web]
     C --> C2[Vertx Persistence]
-    C --> C3[Session per Tx]
     C --> D[Telemetry<br/>Metrics / Tracing]
     D --> E[IntelliJ Plugin<br/>Dev Tools]
     E --> F[Examples<br/>Real Apps]
@@ -168,7 +162,7 @@ We value clarity over cleverness, and community over control.
 GuicedEE is currently in active **SNAPSHOT** development.
 Stable releases are published via [guicedee-bom](https://github.com/GuicedEE/guicedee-bom/tags).
 
-[![Release Workflow](https://img.shields.io/github/actions/workflow/status/GuicedEE/GuicedEE/release.yml?branch=master&label=Release%20Workflow&color=8A2BE2&style=flat-square)](https://github.com/GuicedEE/GuicedEE/actions/workflows/release.yml)
+[![Maven Package](https://img.shields.io/github/actions/workflow/status/GuicedEE/GuicedEE/maven-publish.yml?branch=master&label=Maven%20Package&color=8A2BE2&style=flat-square)](https://github.com/GuicedEE/GuicedEE/actions/workflows/maven-publish.yml)
 
 All releases are coordinated via the Release Workflow above, ensuring consistent artifact promotion and BOM tagging.
 
