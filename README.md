@@ -94,15 +94,15 @@ Add it to your project (versions are managed by the BOM):
 | ➡️ [![OpenAPI](https://img.shields.io/badge/Guiced-Swagger-lightgrey?style=flat-square)](https://github.com/GedMarc/GuicedSwagger) | OpenAPI integration |
 | ➡️ [![SwaggerUI](https://img.shields.io/badge/Swagger-UI-lightgrey?style=flat-square)](https://github.com/GedMarc/Guiced-SwaggerUI) | Swagger UI packaging |
 | ➡️ [![Vertx Persistence](https://img.shields.io/badge/Vert.x-Persistence-4B4BFF?style=flat-square)](https://github.com/GedMarc/GuicedVertxPersistence) | Reactive DB helpers for Vert.x |
-| ➡️ [![Hazelcast](https://img.shields.io/badge/Hazelcast-cache-blue?style=flat-square)](https://github.com/GedMarc/GuicedHazelcast) | Distributed caching (Hazelcast v7 reactive) |
-| ➡️ [![Hazelcast-Hibernate](https://img.shields.io/badge/Hibernate-2L_cache-blue?style=flat-square)](https://github.com/GedMarc/Guiced-Hazelcast-Hibernate) | Hibernate L2 cache |
+| ➡️ [![Hazelcast](https://img.shields.io/badge/Hazelcast-cache-blue?style=flat-square)](https://github.com/GedMarc/GuicedHazelcast) | Distributed caching |
 | ➡️ [![Telemetry](https://img.shields.io/badge/Telemetry-observability-orange?style=flat-square)](https://github.com/GuicedEE/GuicedTelemetry) | Metrics, tracing, and OpenTelemetry |
+| ➡️ [![MicroProfile Config](https://img.shields.io/badge/MicroProfile-Config-00897B?style=flat-square)](https://github.com/GuicedEE/GuicedEE/tree/master/GuicedEE/GuicedMicroProfileConfig) | MicroProfile Config implementation and bridge |
 | ➡️ [![Sockets](https://img.shields.io/badge/Vert.x-Sockets-4B4BFF?style=flat-square)](https://github.com/GuicedEE/GuicedVertxSockets) | WS/SSE integration |
 | ➡️ [![RabbitMQ](https://img.shields.io/badge/RabbitMQ-integration-yellow?style=flat-square)](https://github.com/GuicedEE/GuicedRabbit) | Messaging adapters |
 | ➡️ [![CDI](https://img.shields.io/badge/CDI-bridge-lightgrey?style=flat-square)](https://github.com/GuicedEE/GuicedCDI) | CDI compatibility bridge |
 | ➡️ [![Cerial](https://img.shields.io/badge/Serial-Ports-lightgrey?style=flat-square)](https://github.com/GedMarc/GuicedCerial) | Serial/COM port utilities |
 
-> Also see: **[ai-rules](https://github.com/GuicedEE/ai-rules)** — a curated set of prompt/rule files to auto-assist IDE AI agents (Junie / Copilot / Claude) when working with GuicedEE.
+> Also see: **[ai-rules](https://github.com/GuicedEE/ai-rules)** — a curated set of prompt/rule files to auto-assist IDE AI agents (Junie / Copilot / Claude / Codex / Roo) when working with GuicedEE.
 
 ---
 
@@ -110,28 +110,51 @@ Add it to your project (versions are managed by the BOM):
 
 ```mermaid
 graph TD
-    A[GuicedInjection<br/>IoC + AOP] --> B[Persistence<br/>Reactive Data]
-    B --> C[Vert.x Integration<br/>Web / Event Bus]
-    C --> C1[Vertx Web]
-    C --> C2[Vertx Persistence]
-    C --> D[Telemetry<br/>Metrics / Tracing]
-    D --> E[IntelliJ Plugin<br/>Dev Tools]
-    E --> F[Examples<br/>Real Apps]
-    subgraph Core
-      A
+  %% Core
+  subgraph Core
+    A[GuicedInjection<br/>IoC + AOP]
+  end
+
+  %% Runtime (Vert.x centric)
+  subgraph Runtime
+    V[Vert.x Integration<br/>Event Bus + Core]
+    A --> V
+
+    %% Vert.x Web and friends
+    subgraph "Vert.x Web"
+      V1[Vertx Web]
+      V --> V1
+      V1 --> R[REST Services]
+      V1 --> W[Web Services]
+      V1 --> O[OpenAPI - Swagger]
+      V1 --> UI[Swagger UI]
+      V1 --> S[Vertx Sockets]
     end
-    subgraph Reactive Stack
-      B
-      C
-      C1
-      C2
-      C3
+
+    %% Vert.x Persistence and caching
+    subgraph "Vert.x Persistence"
+      P[Vertx Persistence]
+      V --> P
+      P --> H[Hazelcast v7 Reactive]
     end
-    subgraph Platform
-      D
-      E
-      F
-    end
+
+    %% Cross-cutting integrations
+    V --> T[Telemetry]
+    V --> CFG[MicroProfile Config]
+    V --> MQ[RabbitMQ]
+  end
+
+  %% Platform/Tooling
+  subgraph Platform
+    C[CDI Bridge]
+    IDE[IntelliJ Plugin]
+    EX[Examples]
+  end
+
+  %% Relationships to platform components
+  A --> C
+  A --> IDE
+  IDE --> EX
 ```
 
 ---
@@ -166,11 +189,11 @@ Stable releases are published via [guicedee-bom](https://github.com/GuicedEE/gui
 
 All releases are coordinated via the Release Workflow above, ensuring consistent artifact promotion and BOM tagging.
 
-| Channel | Description |
-|----------|-------------|
-| SNAPSHOT | Development versions built from `master` |
-| Stable | Tagged versions in `guicedee-bom` |
-| AI-Aligned | Optional configuration for IDE agents (Junie / Copilot / Cursor / Claude) |
+| Channel | Description                                                                             |
+|----------|-----------------------------------------------------------------------------------------|
+| SNAPSHOT | Development versions built from `master`                                                |
+| Stable | Tagged versions in `guicedee-bom`                                                       |
+| AI-Aligned | Optional configuration for IDE agents (Junie / Copilot / Cursor / Claude / Codex / Roo) |
 
 ---
 

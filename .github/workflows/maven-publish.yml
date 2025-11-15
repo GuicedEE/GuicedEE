@@ -8,6 +8,19 @@ on:
         default: false
   push:
 jobs:
+  Guiced-Inject-Client:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    with:
+      baseDir: 'GuicedClient/'
+      name: 'Guice Inject Client'
+      publishToCentral: ${{inputs.centralRelease}}
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+      GPG_PASSPHRASE: ${{secrets.GPG_PASSPHRASE}}
+      GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
   GuicedInjection:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
     needs: GuicedVertX
@@ -114,6 +127,7 @@ jobs:
       GPG_PRIVATE_KEY: ${{secrets.GPG_PRIVATE_KEY}}
   GuicedVertX:
     uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs: Guiced-Inject-Client
     with:
       baseDir: 'GuicedVertx/'
       name: 'Guiced Vertx'
