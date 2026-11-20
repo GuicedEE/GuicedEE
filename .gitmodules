@@ -62,3 +62,7 @@
 [submodule "GuicedClient"]
 	path = GuicedClient
 	url = https://github.com/GuicedEE/Client.git
+[submodule "GuicedWasm"]
+	path = GuicedWasm
+	url = https://github.com/GuicedEE/guicedee-wasi-experiment.git
+	branch = main

@@ -80,6 +80,18 @@ Add it to your project (versions are managed by the BOM):
 
 ---
 
+### Optional standalone WASI experiment
+
+Initialize the pinned `GuicedWasm` submodule to run Java, Guice, and WASI HTTP
+feasibility probes separately from the JVM framework build.
+
+```bash
+git submodule update --init -- GuicedWasm
+```
+
+Build steps and the loopback JSON contract are in the
+[standalone WASI guide](https://github.com/GuicedEE/guicedee-wasi-experiment/blob/450446b67780bc944842ebb0a15e75fbfd5ff5d9/docs/inbound-json-proof.md).
+
 ## 🧬 The GuicedEE Ecosystem
 
 > Active modules in this repository. Deprecated/removed modules have been excluded.
